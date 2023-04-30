@@ -1,4 +1,5 @@
 package ru.netology.statsService;
+
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 
@@ -73,6 +74,7 @@ public class StatsServiceTest {
         Assertions.assertEquals(expectedAverageSales, actualAverageSales);
         System.out.println(expectedAverageSales + " == ? == " + actualAverageSales);
     }
+
     //6 количество месяцев, в которых продажи были выше среднего;
     @Test
     public void findTheNumberOfMonthsWithSalesAfterAverage() {

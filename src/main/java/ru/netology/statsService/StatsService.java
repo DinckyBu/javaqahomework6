@@ -1,4 +1,5 @@
 package ru.netology.statsService;
+
 import java.util.Arrays;
 
 public class StatsService {
@@ -48,24 +49,23 @@ public class StatsService {
     public int belowAverage(int[] sales) {
         int averageSales = Arrays.stream(sales).sum() / sales.length;
         int month = 0;
-        for(int x = 0; x < sales.length; x++)
-        if (sales[x] < averageSales){
-            month = month + 1;
-        }
-            else {
-            month = month;
-        }
+        for (int x = 0; x < sales.length; x++)
+            if (sales[x] < averageSales) {
+                month = month + 1;
+            } else {
+                month = month;
+            }
         return month;
-        }
+    }
+
     //5 количество месяцев, в которых продажи были выше среднего;
     public int afterAverage(int[] sales) {
         int averageSales = Arrays.stream(sales).sum() / sales.length;
         int month = 0;
-        for(int x = 0; x < sales.length; x++)
-            if (sales[x] > averageSales){
+        for (int x = 0; x < sales.length; x++)
+            if (sales[x] > averageSales) {
                 month = month + 1;
-            }
-            else {
+            } else {
                 month = month;
             }
         return month;

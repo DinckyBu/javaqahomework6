@@ -5,22 +5,25 @@ import java.util.Arrays;
 public class StatsService {
 
     //1 Сумма всех продаж
-    public static int sum(int[] args) {
-        int sales[] = new int[]{8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        int sum = Arrays.stream(sales).sum();
+    public  int sum(int[] sales) {
+        int sum = 0;
+        for (int num : sales) {
+            sum = sum + num;
+        }
         return sum;
     }
 
     //2 Средняя сумма всех продаж
-    public static int averageSales(int[] args) {
-        int sales[] = new int[]{8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        int sum = Arrays.stream(sales).sum();
-        int i = sales.length;
-        int averageSales = sum / i;
+    public  int averageSales(int[] sales) {
+        int sum = 0;
+        for (int num : sales) {
+            sum = sum + num;
+        }
+            int i = sales.length;
+            int averageSales = sum / i;
 
-        return averageSales;
-
-    }
+            return averageSales;
+        }
 
     //3 Месяц с максимальным числом продаж
     public int getMaxSales(int[] sales) {

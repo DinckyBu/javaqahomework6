@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class StatsService {
 
     //1 Сумма всех продаж
-    public  int sum(int[] sales) {
+    public int sum(int[] sales) {
         int sum = 0;
         for (int num : sales) {
             sum = sum + num;
@@ -14,16 +14,16 @@ public class StatsService {
     }
 
     //2 Средняя сумма всех продаж
-    public  int averageSales(int[] sales) {
+    public int averageSales(int[] sales) {
         int sum = 0;
         for (int num : sales) {
             sum = sum + num;
         }
-            int i = sales.length;
-            int averageSales = sum / i;
+        int i = sales.length;
+        int averageSales = sum / i;
 
-            return averageSales;
-        }
+        return averageSales;
+    }
 
     //3 Месяц с максимальным числом продаж
     public int getMaxSales(int[] sales) {

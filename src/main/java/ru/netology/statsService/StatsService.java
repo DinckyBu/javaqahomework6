@@ -19,8 +19,7 @@ public class StatsService {
         for (int num : sales) {
             sum = sum + num;
         }
-        int i = sales.length;
-        int averageSales = sum / i;
+        int averageSales = sum / sales.length;
 
         return averageSales;
     }
@@ -50,10 +49,15 @@ public class StatsService {
 
     //5 количество месяцев, в которых продажи были ниже среднего;
     public int belowAverage(int[] sales) {
-        int averageSales = Arrays.stream(sales).sum() / sales.length;
+        int sum = 0;
+        for (int num : sales) {
+            sum = sum + num;
+        }
+        int averageSales = sum / sales.length;
+
         int month = 0;
-        for (int x = 0; x < sales.length; x++)
-            if (sales[x] < averageSales) {
+        for (int i = 0; i < sales.length; i++)
+            if (sales[i] < averageSales) {
                 month = month + 1;
             } else {
                 month = month;
@@ -63,10 +67,15 @@ public class StatsService {
 
     //5 количество месяцев, в которых продажи были выше среднего;
     public int afterAverage(int[] sales) {
-        int averageSales = Arrays.stream(sales).sum() / sales.length;
+        int sum = 0;
+        for (int num : sales) {
+            sum = sum + num;
+        }
+        int averageSales = sum / sales.length;
+
         int month = 0;
-        for (int x = 0; x < sales.length; x++)
-            if (sales[x] > averageSales) {
+        for (int i = 0; i < sales.length; i++)
+            if (sales[i] > averageSales) {
                 month = month + 1;
             } else {
                 month = month;

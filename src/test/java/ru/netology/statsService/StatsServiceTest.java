@@ -7,7 +7,7 @@ public class StatsServiceTest {
 
     //1 Сумма всех продаж
     @Test
-    public void amountSales() {
+    public void sumOfAllSales() {
         StatsService service = new StatsService();
 
         int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
@@ -21,7 +21,7 @@ public class StatsServiceTest {
 
     //2 Средняя сумма всех продаж
     @Test
-    public void averageSales() {
+    public void averageAmountOfSales() {
         StatsService service = new StatsService();
 
         int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
@@ -35,7 +35,7 @@ public class StatsServiceTest {
 
     //3 Месяц с максимальным числом продаж
     @Test
-    public void shouldFindMaxSales() {
+    public void shouldFindNumberOfTheMonthMaxSales() {
         StatsService service = new StatsService();
 
         int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
@@ -49,7 +49,7 @@ public class StatsServiceTest {
 
     //4 Месяц с минимальным числом продаж
     @Test
-    public void shouldFindMinSales() {
+    public void shouldFindNumberOfTheMonthMinSales() {
         StatsService service = new StatsService();
 
         int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};

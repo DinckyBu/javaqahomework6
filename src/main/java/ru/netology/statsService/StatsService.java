@@ -15,12 +15,8 @@ public class StatsService {
 
     //2 Средняя сумма всех продаж
     public int averageSales(int[] sales) {
-        int sum = 0;
-        for (int num : sales) {
-            sum = sum + num;
-        }
+        int sum = sum(sales);
         int averageSales = sum / sales.length;
-
         return averageSales;
     }
 
@@ -35,7 +31,6 @@ public class StatsService {
         return maxSales;
     }
 
-
     //4 Месяц с минимальным числом продаж
     public int getMinSales(int[] sales) {
         int minSales = sales[0];
@@ -49,37 +44,30 @@ public class StatsService {
 
     //5 количество месяцев, в которых продажи были ниже среднего;
     public int belowAverage(int[] sales) {
-        int sum = 0;
-        for (int num : sales) {
-            sum = sum + num;
-        }
+        int sum = sum(sales);
         int averageSales = sum / sales.length;
-
         int month = 0;
-        for (int i = 0; i < sales.length; i++)
+        for (int i = 0; i < sales.length; i++) {
             if (sales[i] < averageSales) {
                 month = month + 1;
             } else {
                 month = month;
             }
-        return month;
+        }       return month;
+
     }
 
-    //5 количество месяцев, в которых продажи были выше среднего;
-    public int afterAverage(int[] sales) {
-        int sum = 0;
-        for (int num : sales) {
-            sum = sum + num;
-        }
-        int averageSales = sum / sales.length;
-
-        int month = 0;
-        for (int i = 0; i < sales.length; i++)
-            if (sales[i] > averageSales) {
-                month = month + 1;
-            } else {
-                month = month;
+        //6 количество месяцев, в которых продажи были выше среднего;
+        public int afterAverage ( int[] sales){
+            int sum = sum(sales);
+            int averageSales = sum / sales.length;
+            int month = 0;
+            for (int i = 0; i < sales.length; i++) {
+                if (sales[i] > averageSales) {
+                    month = month + 1;
+                } else {
+                    month = month;
+                }
+            }                return month;
             }
-        return month;
-    }
-}
+        }

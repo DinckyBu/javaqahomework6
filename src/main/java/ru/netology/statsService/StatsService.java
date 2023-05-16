@@ -53,21 +53,23 @@ public class StatsService {
             } else {
                 month = month;
             }
-        }       return month;
+        }
+        return month;
 
     }
 
-        //6 количество месяцев, в которых продажи были выше среднего;
-        public int afterAverage ( int[] sales){
-            int sum = sum(sales);
-            int averageSales = sum / sales.length;
-            int month = 0;
-            for (int i = 0; i < sales.length; i++) {
-                if (sales[i] > averageSales) {
-                    month = month + 1;
-                } else {
-                    month = month;
-                }
-            }                return month;
+    //6 количество месяцев, в которых продажи были выше среднего;
+    public int afterAverage(int[] sales) {
+        int sum = sum(sales);
+        int averageSales = sum / sales.length;
+        int month = 0;
+        for (int i = 0; i < sales.length; i++) {
+            if (sales[i] > averageSales) {
+                month = month + 1;
+            } else {
+                month = month;
             }
         }
+        return month;
+    }
+}

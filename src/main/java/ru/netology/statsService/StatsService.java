@@ -22,36 +22,33 @@ public class StatsService {
 
     //3 Месяц с максимальным числом продаж
     public int getMaxSales(int[] sales) {
-        int maxSales = sales[0];
-        for (int t : sales) {
-            if (t < maxSales) {
-                maxSales = t + 1;
+        int monthMaxSales = 0;
+        for (int i = 0; i < sales.length; i++) {
+            if (sales[i] >= sales[monthMaxSales]) {
+                monthMaxSales = i;
             }
         }
-        return maxSales;
+        return monthMaxSales + 1;
     }
 
     //4 Месяц с минимальным числом продаж
     public int getMinSales(int[] sales) {
-        int minSales = sales[0];
-        for (int t : sales) {
-            if (t < minSales) {
-                minSales = t + 1;
+        int monthMinSales = 0;
+        for (int i = 0; i < sales.length; i++) {
+            if (sales[i] <= sales[monthMinSales]) {
+                monthMinSales = i;
             }
         }
-        return minSales;
+        return monthMinSales + 1;
     }
 
     //5 количество месяцев, в которых продажи были ниже среднего;
     public int belowAverage(int[] sales) {
-        int sum = sum(sales);
-        int averageSales = sum / sales.length;
+        int averageSales = averageSales(sales);
         int month = 0;
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] < averageSales) {
                 month = month + 1;
-            } else {
-                month = month;
             }
         }
         return month;
@@ -60,14 +57,11 @@ public class StatsService {
 
     //6 количество месяцев, в которых продажи были выше среднего;
     public int afterAverage(int[] sales) {
-        int sum = sum(sales);
-        int averageSales = sum / sales.length;
+        int averageSales = averageSales(sales);
         int month = 0;
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] > averageSales) {
                 month = month + 1;
-            } else {
-                month = month;
             }
         }
         return month;

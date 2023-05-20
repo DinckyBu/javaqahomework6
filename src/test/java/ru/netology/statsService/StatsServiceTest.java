@@ -54,7 +54,7 @@ public class StatsServiceTest {
 
         int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
-        int expectedAverageSales = 8;
+        int expectedAverageSales = 9;
         int actualAverageSales = service.getMinSales(sales);
 
         Assertions.assertEquals(expectedAverageSales, actualAverageSales);
